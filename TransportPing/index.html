@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" 
+    rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" 
+    crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" 
+    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>TransportPing</title>
+    <style>
+        .user-icon{
+            transform: translateY(-8px);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+        }
+        body .highlight-content{
+            background-image: url(/images/banner1.jpg);
+            width: 100vw;
+            height: 400px;
+            background-repeat: no-repeat;
+            border-top:3px solid orange ;
+        }
+        body header nav .signup-text {
+            transform: translateY(30px);
+        }
+        .line{
+            background-image: url(/images/banner-search-bg.png);
+            width: 40%;
+            height: 20px;
+            background-repeat: no-repeat;
+            margin-left: auto; 
+            margin-right: auto;  
+        }
+        @media screen and (max-width:840px) {
+           .user-icon{
+            margin-bottom: 18px;
+           } 
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="navbar w-75 mx-auto">
+            <div class="logo navbar-brand">
+                <img src="/images/logo.png" alt="" srcset="">
+            </div>
+            <div class="signup-text d-flex  ">
+                <div>
+                    <p class="text-uppercase">
+                        add your listing &nbsp;|&nbsp; signup &nbsp;
+                    </p> 
+                </div> 
+                <div class="bg-warning  user-icon text-center p-2 ">
+                    <em class="fa-solid fa-user text-white  " ></em>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="highlight-content ">
+        <p class="text-center text-white h2 mt-4">The <span class="h1">Online <span class="text-warning">Transport</span> </span>  Hub...</p>
+        <div class="line  "></div>
+        <p class="text-white text-center mt-4 h6">Find a Car with our Quick Search</p>
+        <div class="user-input w-75 mx-auto d-flex justify-content-evenly">
+            <input type="text" value="" placeholder="Keyword">
+            <div class="dropdown">
+                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Dropdown link
+                </a>
+              
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Action</a></li>
+                  <li><a class="dropdown-item" href="#">Another action</a></li>
+                  <li><a class="dropdown-item" href="#">Something else here</a></li>
+                </ul>
+            </div>
+            <button type="button" class="btn btn-warning">Find Vehicle &nbsp; &gt;</button>
+
+        </div>
+    </div>
+</body>
+</html>
