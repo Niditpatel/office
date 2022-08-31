@@ -31,11 +31,12 @@
         }
         .line{
             background-image: url(/images/banner-search-bg.png);
-            width: 40%;
+            width: 63%;
             height: 20px;
             background-repeat: no-repeat;
             margin-left: auto; 
             margin-right: auto;  
+            margin-top: 30px;
         }
         @media screen and (max-width:840px) {
            .user-icon{
@@ -45,6 +46,7 @@
     </style>
 </head>
 <body>
+    <div class="container-xxl"> 
     <header>
         <nav class="navbar w-75 mx-auto">
             <div class="logo navbar-brand">
@@ -65,10 +67,12 @@
     <div class="highlight-content ">
         <p class="text-center text-white h2 mt-4">The <span class="h1">Online <span class="text-warning">Transport</span> </span>  Hub...</p>
         <div class="line  "></div>
-        <p class="text-white text-center mt-4 h6">Find a Car with our Quick Search</p>
-        <div class="user-input w-75 mx-auto d-flex justify-content-evenly">
-            <input type="text" value="" placeholder="Keyword">
-            <div class="dropdown">
+        <p class="text-white text-center my-4 h6">Find a Car with our Quick Search</p>
+        <div class="user-input  w-75 mx-auto row justify-content-between">
+            <div class="col-4">
+                <input type="text" value="" placeholder="Keyword">
+            </div>
+            <div class="dropdown col-4">
                 <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Dropdown link
                 </a>
@@ -79,9 +83,12 @@
                   <li><a class="dropdown-item" href="#">Something else here</a></li>
                 </ul>
             </div>
+           <div class="col-4">
             <button type="button" class="btn btn-warning">Find Vehicle &nbsp; &gt;</button>
+           </div> 
 
         </div>
     </div>
+</div>
 </body>
 </html>
