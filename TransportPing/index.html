@@ -1,94 +1,514 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" 
-    rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" 
-    crossorigin="anonymous">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" 
-    integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+        integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>TransportPing</title>
     <style>
-        .user-icon{
-            transform: translateY(-8px);
-            border-radius: 50%;
-            width: 40px;
-            height: 40px;
+        .user-icon {
+            width: 35px;
+            height: 35px;
         }
-        body .highlight-content{
-            background-image: url(/images/banner1.jpg);
-            width: 100vw;
+
+        .highlight {
+            background-image: url(./public/images/banner1.jpg);
             height: 400px;
+            border-top: 3px solid rgb(255, 191, 71);
             background-repeat: no-repeat;
-            border-top:3px solid orange ;
+            margin-bottom: 80px;
         }
-        body header nav .signup-text {
-            transform: translateY(30px);
-        }
-        .line{
-            background-image: url(/images/banner-search-bg.png);
-            width: 63%;
-            height: 20px;
+
+        .line {
+            background-image: url(./public/images/banner-search-bg.png);
             background-repeat: no-repeat;
-            margin-left: auto; 
-            margin-right: auto;  
-            margin-top: 30px;
+            width: 60%;
+            height: 30px;
         }
-        @media screen and (max-width:840px) {
-           .user-icon{
-            margin-bottom: 18px;
-           } 
+        .input-buttons{
+            margin-bottom: 90px;
+        }
+
+        .triangle-right {
+        width: 0;
+        height: 0;
+        border-top: 12px solid transparent;
+        border-left: 23px solid white;
+        border-bottom: 12px solid transparent;
+        }
+        .sell-icon{
+            border-bottom: 3px solid lightgray;
+        }
+        .border_bottom{
+            border-bottom: 1px solid orange;
+        }
+        .img-text{
+            margin-left: 5px;
+            margin-top: 5px;
         }
     </style>
 </head>
+
 <body>
-    <div class="container-xxl"> 
-    <header>
-        <nav class="navbar w-75 mx-auto">
-            <div class="logo navbar-brand">
-                <img src="/images/logo.png" alt="" srcset="">
+    <div class="container-xxl mb-3 ">
+        <div class="container row ">
+            <div class="logo col-6">
+                <img src="./public/images/logo.png" alt="Logo">
             </div>
-            <div class="signup-text d-flex  ">
-                <div>
-                    <p class="text-uppercase">
-                        add your listing &nbsp;|&nbsp; signup &nbsp;
-                    </p> 
-                </div> 
-                <div class="bg-warning  user-icon text-center p-2 ">
-                    <em class="fa-solid fa-user text-white  " ></em>
+            <div class=" col-6  d-flex align-items-end justify-content-end">
+                <p class="text-uppercase mb-1 me-3 pt-auto">add your listing | signup</p>
+                <div class="bg-warning user-icon text-center py-1 rounded-circle ">
+                    <em class="fa-solid fa-user text-white text-small "></em>
                 </div>
             </div>
-        </nav>
-    </header>
-    <div class="highlight-content ">
-        <p class="text-center text-white h2 mt-4">The <span class="h1">Online <span class="text-warning">Transport</span> </span>  Hub...</p>
-        <div class="line  "></div>
-        <p class="text-white text-center my-4 h6">Find a Car with our Quick Search</p>
-        <div class="user-input  w-75 mx-auto row justify-content-between">
-            <div class="col-4">
-                <input type="text" value="" placeholder="Keyword">
-            </div>
-            <div class="dropdown col-4">
-                <a class="btn btn-secondary dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                  Dropdown link
-                </a>
-              
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><a class="dropdown-item" href="#">Something else here</a></li>
-                </ul>
-            </div>
-           <div class="col-4">
-            <button type="button" class="btn btn-warning">Find Vehicle &nbsp; &gt;</button>
-           </div> 
+        </div>
 
+    </div>
+    <div class="container-fluid  highlight ">
+        <div class="container-xxl">
+            <div class="container mt-4">
+                <p class="h1 display-6 text-center text-white ">The <span class="h1 display-3  "> Online <span
+                            class="text-warning">Transport </span></span> Hub...</p>
+                <div class="line ms-auto me-auto my-4"></div>
+                <p class="text-center text-white fw-semibold">Find a Car with our Quick Search</p>
+                <div class="row  input-buttons">
+                    <div class="col-4">
+                        <input type="text" placeholder="Keyword" class="w-100 rounded py-2 border border-3">
+                    </div>
+                    <div class="col-4 ">
+                        <select class="form-select  py-2 border border-3 w-100" >
+                            <option><span class="text-muted">Select Category </span> </option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>
+                    </div>
+                    <div class="col-4">
+                        <button type="button" class="btn btn-warning w-100 py-2 d-flex justify-content-between border border-3 border-warning"><span class="text-white fw-semibold">Find Vehicle</span> 
+                            <span><em class="fa-solid fa-greater-than text-white"></em></span> 
+                        </button>
+                    </div>
+                </div>
+                <div class="row bg-white pt-4 px-2 mb-5">
+                    <div class="col-4">
+                        <div class="w-100 bg-warning d-flex justify-content-between sell-icon">
+                            <span  class="d-flex mt-4">
+                                <span class="triangle-right"></span>
+                                <p class="text-white fw-semibold ms-2">	Rent Vehicle</p>
+                            </span>
+                            <span>
+                                <img src="./public/images/rent-vehicle-icon.jpg" alt="" srcset="">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="w-100 bg-warning d-flex justify-content-between sell-icon ">
+                            <span  class="d-flex mt-4">
+                                <span class="triangle-right"></span>
+                                <p class="text-white fw-semibold ms-2">	Sell Vehicle</p>
+                            </span>
+                            <span>
+                                <img src="./public/images/sell-vehicle-icon.jpg" alt="" srcset="">
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="w-100 bg-warning d-flex justify-content-between sell-icon">
+                            <div class="d-flex mt-4">
+                                <span class="triangle-right"></span>
+                                <p class="text-white fw-semibold ms-2 ">Services &amp; Parts</p>
+                            </div>
+                            <div>
+                                <img src="./public/images/vehicle-part-icon.jpg" alt="" srcset="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-</div>
+    <div class="container-xxl main-content">
+        <div class="container row pt-5">
+            <div class="col-md-6">
+                <p class="text-muted h3">Welcome to</p>
+                <p class="text-uppercase text-primary h3">transport ping</p>
+                <p class="text-warning">Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus nobis tempore et hic! Consequuntur corporis, placeat provident illum debitis dolorum!</p>
+            </div>
+            <div class="col-md-6">
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+                    Eligendi ut illo, libero nam suscipit quidem iste autem doloribus tempora quasi 
+                    ullam non incidunt nesciunt quos adipisci saepe consequatur est beatae. Sapiente ea, 
+                    iure, qui ex cumque voluptatem commodi praesentium ducimus pariatur veniam perferendis
+                    deserunt consectetur quos quibusdam eligendi? Accusamus, provident.
+                </p>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <p class="text-primary text-uppercase d-inline-block border_bottom h3">recent listed</p>
+            <div class="row">
+                <div class="col-md-3">
+                        <div class="position-relative">
+                            <img src="./public/images/recent_listed1.jpg" class="w-100" alt="" srcset="">
+                            <div class=" position-absolute top-0 img-text">
+                                <p class="bg-white d-inline-block">2009</p>
+                                <p class="bg-warning "> lorem ipsum</p>
+                            </div>
+                        </div>
+                    <p class="text-uppercase fw-semibold">Lorem ipsum dolor sit</p>
+                    <p>Lorem ipsum dolor sit amet consecte</p>
+                    <p class="text-primary fs-4">	 &#8377; 900</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="position-relative">
+                        <img src="./public/images/recent_listed2.jpg" class="w-100" alt="" srcset="">
+                        <div class=" position-absolute top-0 img-text">
+                            <p class="bg-white d-inline-block">2009</p>
+                            <p class="bg-warning "> lorem ipsum</p>
+                        </div>
+                    </div>
+                    <p class="text-uppercase fw-semibold">Lorem ipsum dolor sit</p>
+                    <p>Lorem ipsum dolor sit amet consecte</p>
+                    <p class="text-primary fs-4">	 &#8377; 900</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="position-relative">
+                        <img src="./public/images/recent_listed3.jpg" class="w-100" alt="" srcset="">
+                        <div class=" position-absolute top-0 img-text">
+                            <p class="bg-white d-inline-block">2009</p>
+                            <p class="bg-warning "> lorem ipsum</p>
+                        </div>
+                    </div>
+                    <p class="text-uppercase fw-semibold">Lorem ipsum dolor sit</p>
+                    <p>Lorem ipsum dolor sit amet consecte</p>
+                    <p class="text-primary fs-4">	 &#8377; 900</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="position-relative">
+                        <img src="./public/images/recent_listed4.jpg" class="w-100" alt="" srcset="">
+                        <div class=" position-absolute top-0 img-text">
+                            <p class="bg-white d-inline-block">2009</p>
+                            <p class="bg-warning "> lorem ipsum</p>
+                        </div>
+                    </div>
+                    <p class="text-uppercase fw-semibold">Lorem ipsum dolor sit</p>
+                    <p>Lorem ipsum dolor sit amet consecte</p>
+                    <p class="text-primary fs-4">	 &#8377; 900</p>
+                </div>
+            </div>
+        </div>
+        <div class="container my-4">
+            <div class="row">
+                <div class="col-md-8">
+                    <p class="text-primary text-uppercase d-inline-block border_bottom h3">recent listed vehicles for rent </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="./public/images/recent_listed_rent1.jpg" class="w-100 mb-1" alt="" srcset="">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="text-uppercase">Lorem ipsum dolor sit</p>
+                                    <p>Lorem ipsum dolor sit amet consecte</p>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-select form-select-lg mb-3 py-0 w-100" aria-label=".form-select-lg example">
+                                        <option selected>categories</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p class="text-primary fs-4">	 &#8377; 1500</p>
+                            <div class="d-flex ">
+                                <button><span class="text-uppercase"> share</span></button>                               
+                                <button class="ms-2"><span class="text-uppercase"> enquire</span></button>
+                                <button class="ms-2"><span class="text-uppercase"> distance from me</span></button>
+                            </div> 
+                            <button class="mt-3 border border-3 border-warning bg-warning rounded p-2">
+                                <span class="text-white fw-semibold text-uppercase"> view details</span>
+                             </button>  
+                        </div>
+                        <div class="col-md-6">
+                            <img src="./public/images/recent_listed_rent2.jpg" class="w-100 mb-1" alt="" srcset="">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="text-uppercase">Lorem ipsum dolor sit</p>
+                                    <p>Lorem ipsum dolor sit amet consecte</p>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-select form-select-lg mb-3 py-0" aria-label=".form-select-lg example">
+                                        <option selected>categories</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p class="text-primary fs-4">	 &#8377; 1500</p>                         
+                            <div class="d-flex ">
+                                <button><span class="text-uppercase"> share</span></button>                               
+                                <button class="ms-2"><span class="text-uppercase "> enquire</span></button>
+                                <button class="ms-2"><span class="text-uppercase"> distance from me</span></button>
+                            </div>
+                            <button class="mt-3 border border-3 border-warning bg-warning rounded p-2">
+                               <span class="text-white fw-semibold text-uppercase"> view details</span>
+                            </button>                        
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="container bg-light p-3 my-4">
+                        <p class="text-primary text-uppercase d-inline-block border_bottom h3 mt-3">ragistration</p>
+                        <select class="form-select  my-3  " aria-label=".form-select-lg example">
+                            <option selected>Dealer</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                        </select>   
+                        <input type="text" placeholder="Username" class=" form-control my-3" >
+                        <input type="email" placeholder="Email" class=" form-control my-3">
+                        <input type="password" placeholder="Password" class="form-control my-3">
+                        <div class="d-flex justify-content-between my-3"><hr class="border border-success border-3 opacity-100 w-75">           
+                            <em class="fa-solid fa-rotate mt-2"></em>
+                            <em class="fa-solid fa-eye-slash mt-2"></em>
+                        </div> 
+                        <input type="password" placeholder="Conform Password" class="form-control my-3"> 
+                        <input type="text" name="" id="" placeholder="Mobile" class="form-control my-3"> 
+                        <button class="bg-warning rounded  form-control "><span class="text-white fw-semibold text-white text-center text-uppercase">create an account</span></button>                     
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <div class="row">
+                <div class="col-md-8">
+                    <p class="text-primary text-uppercase d-inline-block border_bottom h3">recent listed vehicles for sell </p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="./public/images/recent_listed_sell1.jpg" class="w-100 mb-1" alt="" srcset="">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="text-uppercase">Lorem ipsum dolor sit</p>
+                                    <p>Lorem ipsum dolor sit amet consecte</p>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-select form-select-lg mb-3 py-0 w-100" aria-label=".form-select-lg example">
+                                        <option selected>categories</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p class="text-primary fs-4">	 &#8377; 1500</p>
+                            <div class="d-flex ">
+                                <button><span class="text-uppercase"> share</span></button>                               
+                                <button class="ms-2"><span class="text-uppercase"> enquire</span></button>
+                                <button class="ms-2"><span class="text-uppercase"> distance from me</span></button>
+                            </div> 
+                            <button class="mt-3 border border-3 border-warning bg-warning rounded p-2">
+                                <span class="text-white fw-semibold text-uppercase"> view details</span>
+                             </button>  
+                        </div>
+                        <div class="col-md-6">
+                            <img src="./public/images/recent_listed_sell2.jpg" class="w-100 mb-1" alt="" srcset="">
+                            <div class="row">
+                                <div class="col-6">
+                                    <p class="text-uppercase">Lorem ipsum dolor sit</p>
+                                    <p>Lorem ipsum dolor sit amet consecte</p>
+                                </div>
+                                <div class="col-6">
+                                    <select class="form-select form-select-lg mb-3 py-0" aria-label=".form-select-lg example">
+                                        <option selected>categories</option>
+                                        <option value="1">One</option>
+                                        <option value="2">Two</option>
+                                        <option value="3">Three</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <p class="text-primary fs-4">	 &#8377; 1500</p>                         
+                            <div class="d-flex ">
+                                <button><span class="text-uppercase"> share</span></button>                               
+                                <button class="ms-2"><span class="text-uppercase "> enquire</span></button>
+                                <button class="ms-2"><span class="text-uppercase"> distance from me</span></button>
+                            </div>
+                            <button class="mt-3 border border-3 border-warning bg-warning rounded p-2">
+                               <span class="text-white fw-semibold text-uppercase"> view details</span>
+                            </button>                        
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="container  bg-light p-3  my-4">
+                        <p class="text-primary text-uppercase d-inline-block border_bottom h3 my-3">twittwer feeds</p>
+                        <p class="mb-0">
+                            <em class="fa-brands fa-twitter"></em>
+                            &#x40;Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum aperiam,
+                            eos quae 
+                        </p>
+                        <p class="text-primary mt-0 w-100 mb-3">April 22,2015</p>
+                        <p class="mb-0">
+                            <em class="fa-brands fa-twitter"></em>
+                            &#x40;Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum aperiam,
+                            eos quae
+                        </p>
+                        <p class="text-primary mt-0 w-100 mb-3">April 22,2015</p>
+                        <p class="mb-0">
+                            <em class="fa-brands fa-twitter"></em>
+                            &#x40;Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum aperiam,
+                            eos quae
+                        </p>
+                        <p class="text-primary mt-0 w-100 mb-3">April 22,2015</p>
+                        <p class="mb-0">
+                            <em class="fa-brands fa-twitter"></em>
+                            &#x40;Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum aperiam,
+                            eos quae 
+                        </p>
+                        <p class="text-primary mt-0 w-100 mb-3">April 22,2015</p>
+                        <p class="mb-0">
+                            <em class="fa-brands fa-twitter"></em>
+                            &#x40;Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum aperiam,
+                            eos quae 
+                        </p> 
+                        <p class="text-primary mt-0 w-100 mb-3">April 22,2015</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-4">
+            <p class="text-primary text-uppercase d-inline-block border_bottom h3">featured categories</p>
+            <div class="row">
+                <div class="col-md-3">
+                        <div class="position-relative">
+                            <img src="./public/images/featured1.jpg" class="w-100" alt="" srcset="">
+                            <div class=" position-absolute top-0 img-text">
+                                <p class="bg-white d-inline-block">2009</p>
+                                <p class="bg-warning "> lorem ipsum</p>
+                            </div>
+                        </div>
+                    <p class="text-uppercase fw-semibold">Lorem ipsum dolor sit</p>
+                    <p>Lorem ipsum dolor sit amet consecte</p>
+                    <p class="text-primary fs-4">	 &#8377; 900</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="position-relative">
+                        <img src="./public/images/featured2.jpg" class="w-100" alt="" srcset="">
+                        <div class=" position-absolute top-0 img-text">
+                            <p class="bg-white d-inline-block">2009</p>
+                            <p class="bg-warning "> lorem ipsum</p>
+                        </div>
+                    </div>
+                    <p class="text-uppercase fw-semibold">Lorem ipsum dolor sit</p>
+                    <p>Lorem ipsum dolor sit amet consecte</p>
+                    <p class="text-primary fs-4">	 &#8377; 900</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="position-relative">
+                        <img src="./public/images/featured3.jpg" class="w-100" alt="" srcset="">
+                        <div class=" position-absolute top-0 img-text">
+                            <p class="bg-white d-inline-block">2009</p>
+                            <p class="bg-warning "> lorem ipsum</p>
+                        </div>
+                    </div>
+                    <p class="text-uppercase fw-semibold">Lorem ipsum dolor sit</p>
+                    <p>Lorem ipsum dolor sit amet consecte</p>
+                    <p class="text-primary fs-4">	 &#8377; 900</p>
+                </div>
+                <div class="col-md-3">
+                    <div class="position-relative">
+                        <img src="./public/images/featured4.jpg" class="w-100" alt="" srcset="">
+                        <div class=" position-absolute top-0 img-text">
+                            <p class="bg-white d-inline-block">2009</p>
+                            <p class="bg-warning "> lorem ipsum</p>
+                        </div>
+                    </div>
+                    <p class="text-uppercase fw-semibold">Lorem ipsum dolor sit</p>
+                    <p>Lorem ipsum dolor sit amet consecte</p>
+                    <p class="text-primary fs-4">	 &#8377; 900</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid bg-primary ">
+        <div class="container-xxl">
+            <div class="container mt-4 pt-5">
+                <div class="row">
+                    <div class="col-8">
+                        <p class="text-white text-uppercase d-inline-block border_bottom h3 mb-3">
+                            about transportping.com
+                        </p>
+                        <p class="text-white">
+                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Libero, quidem.
+                        </p>
+                        <p class="text-white">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aperiam minus nulla quasi rerum aut cum pariatur,
+                            excepturi doloribus quos iusto.
+                        </p>
+                        <p class="text-white">
+                            Lorem ipsum dolor sit amet consectetur..
+                        </p>
+                        <p class="mt-5">
+                            <em class="fa-brands fa-square-twitter text-white ms-1" ></em>
+                            <em class="fa-brands fa-square-facebook text-white ms-1" ></em>
+                            <em class="fa-brands fa-linkedin text-white ms-1"></em>
+                            <em class="fa-brands fa-square-google-plus text-white ms-1"></em>
+                        </p>
+                    </div>
+                    <div class="col-4">
+                        <div class="container mb-4">
+                            <p class="text-white text-uppercase d-inline-block border_bottom h3 ">newsletter sign up</p>
+                             
+                            <input type="text" placeholder="Full Name" class=" form-control my-3" >
+                            <input type="email" placeholder="Email Address" class=" form-control my-3">
+                            <button class="bg-warning rounded  form-control ">
+                                <span class="text-white fw-semibold text-white text-center text-uppercase">sign up now</span>
+                            </button>  
+                                             
+                        </div>
+                        <div class="float-end">
+                            <img src="./public/images/paypal-logos.png" alt="" srcset="">  
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid mb-2">
+        <div class="container-xxl">
+            <p class="text-center text-capitalize mt-2">our group of companies</p>
+            <div class="conatiner d-flex justify-content-evenly">
+                <div>
+                    <img src="./public/images/prem-vivaah-logo.png" alt="" srcset="">
+                </div>
+               
+                <div>
+                    <img src="./public/images/le-vech-logo.png" alt="" srcset="">
+                </div>
+                <div>
+                    <img src="./public/images/new-startups-logo.png" alt="" srcset="">
+                </div>
+            </div>            
+        </div>
+    </div>
+    <div class="conatiner-fluid bg-warning">
+        <div class="container-xxl">
+            <div class="conatiner  d-flex justify-content-between ">
+                <p class="text-capitalize my-2">all rights reserved</p>
+                <p class="text-capitalize my-2">	&#169;copyright-2016-TransportPing.com</p>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous">
+    </script>
+
 </body>
+
 </html>
