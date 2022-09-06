@@ -20,21 +20,16 @@
 
         .highlight {
             background-image: url(./public/images/banner1.jpg);
+            width: 100vw    ;
             height: 400px;
             border-top: 3px solid rgb(255, 191, 71);
             background-repeat: no-repeat;
             margin-bottom: 80px;
         }
 
-        .line {
-            background-image: url(./public/images/banner-search-bg.png);
-            background-repeat: no-repeat;
-            width: 60%;
-            height: 30px;
-        }
-        .input-buttons{
+        /* .input-buttons{
             margin-bottom: 90px;
-        }
+        } */
 
         .triangle-right {
         width: 0;
@@ -53,14 +48,19 @@
             margin-left: 5px;
             margin-top: 5px;
         }
+        @media screen and (max-width:1002) {
+            .details-buttons{
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 
 <body>
     <div class="container-xxl mb-3 ">
         <div class="container row ">
-            <div class="logo col-6">
-                <img src="./public/images/logo.png" alt="Logo">
+            <div class="logo col-6 ">
+                <img src="./public/images/logo.png" alt="Logo" class="w-100">
             </div>
             <div class=" col-6  d-flex align-items-end justify-content-end">
                 <p class="text-uppercase mb-1 me-3 pt-auto">add your listing | signup</p>
@@ -71,18 +71,20 @@
         </div>
 
     </div>
-    <div class="container-fluid  highlight ">
+    <div class="container-fluid  highlight mb-5 ">
         <div class="container-xxl">
             <div class="container mt-4">
                 <p class="h1 display-6 text-center text-white ">The <span class="h1 display-3  "> Online <span
                             class="text-warning">Transport </span></span> Hub...</p>
-                <div class="line ms-auto me-auto my-4"></div>
+                <div class="line ms-auto me-auto my-4">
+                    <img src="./public/images/banner-search-bg.png" alt="" srcset="" class="w-100">
+                </div>
                 <p class="text-center text-white fw-semibold">Find a Car with our Quick Search</p>
                 <div class="row  input-buttons">
-                    <div class="col-4">
+                    <div class="col-md-4 mb-2">
                         <input type="text" placeholder="Keyword" class="w-100 rounded py-2 border border-3">
                     </div>
-                    <div class="col-4 ">
+                    <div class="col-md-4 mb-2 ">
                         <select class="form-select  py-2 border border-3 w-100" >
                             <option><span class="text-muted">Select Category </span> </option>
                             <option value="1">One</option>
@@ -90,25 +92,25 @@
                             <option value="3">Three</option>
                         </select>
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-4 ">
                         <button type="button" class="btn btn-warning w-100 py-2 d-flex justify-content-between border border-3 border-warning"><span class="text-white fw-semibold">Find Vehicle</span> 
                             <span><em class="fa-solid fa-greater-than text-white"></em></span> 
                         </button>
                     </div>
                 </div>
                 <div class="row bg-white pt-4 px-2 mb-5">
-                    <div class="col-4">
+                    <div class="col-md-4">
                         <div class="w-100 bg-warning d-flex justify-content-between sell-icon">
-                            <span  class="d-flex mt-4">
+                            <div  class="d-flex mt-4">
                                 <span class="triangle-right"></span>
                                 <p class="text-white fw-semibold ms-2">	Rent Vehicle</p>
-                            </span>
-                            <span>
+                            </div>
+                            <div>
                                 <img src="./public/images/rent-vehicle-icon.jpg" alt="" srcset="">
-                            </span>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-4">
                         <div class="w-100 bg-warning d-flex justify-content-between sell-icon ">
                             <span  class="d-flex mt-4">
                                 <span class="triangle-right"></span>
@@ -119,7 +121,7 @@
                             </span>
                         </div>
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-4">
                         <div class="w-100 bg-warning d-flex justify-content-between sell-icon">
                             <div class="d-flex mt-4">
                                 <span class="triangle-right"></span>
@@ -226,12 +228,12 @@
                                 </div>
                             </div>
                             <p class="text-primary fs-4">	 &#8377; 1500</p>
-                            <div class="d-flex ">
+                            <div class="d-flex details-buttons ">
                                 <button><span class="text-uppercase"> share</span></button>                               
                                 <button class="ms-2"><span class="text-uppercase"> enquire</span></button>
                                 <button class="ms-2"><span class="text-uppercase"> distance from me</span></button>
                             </div> 
-                            <button class="mt-3 border border-3 border-warning bg-warning rounded p-2">
+                            <button class="mt-3 border border-3 border-warning bg-warning rounded p-2 mb-3">
                                 <span class="text-white fw-semibold text-uppercase"> view details</span>
                              </button>  
                         </div>
@@ -308,13 +310,21 @@
                                 </div>
                             </div>
                             <p class="text-primary fs-4">	 &#8377; 1500</p>
-                            <div class="d-flex ">
-                                <button><span class="text-uppercase"> share</span></button>                               
+                            <div class="row ">
+                                <div class="col-2">
+                                    <button><span class="text-uppercase"> share</span></button>  
+                                </div>
+                                <div class="col-3 ">
                                 <button class="ms-2"><span class="text-uppercase"> enquire</span></button>
-                                <button class="ms-2"><span class="text-uppercase"> distance from me</span></button>
+                                </div>
+                                <div class="col-7">
+                                    <button class="ms-2"><span class="text-uppercase"> distance from me</span></button>
+                                </div>                          
+                                
+                                
                             </div> 
-                            <button class="mt-3 border border-3 border-warning bg-warning rounded p-2">
-                                <span class="text-white fw-semibold text-uppercase"> view details</span>
+                            <button class="mt-3 border border-3 border-warning bg-warning rounded p-2 mb-3">
+                                <span class="text-white fw-semibold text-uppercase "> view details</span>
                              </button>  
                         </div>
                         <div class="col-md-6">
@@ -440,7 +450,7 @@
         <div class="container-xxl">
             <div class="container mt-4 pt-5">
                 <div class="row">
-                    <div class="col-8">
+                    <div class="col-md-8">
                         <p class="text-white text-uppercase d-inline-block border_bottom h3 mb-3">
                             about transportping.com
                         </p>
@@ -461,7 +471,7 @@
                             <em class="fa-brands fa-square-google-plus text-white ms-1"></em>
                         </p>
                     </div>
-                    <div class="col-4">
+                    <div class="col-md-4">
                         <div class="container mb-4">
                             <p class="text-white text-uppercase d-inline-block border_bottom h3 ">newsletter sign up</p>
                              
@@ -472,7 +482,7 @@
                             </button>  
                                              
                         </div>
-                        <div class="float-end">
+                        <div class="float-end mb-2">
                             <img src="./public/images/paypal-logos.png" alt="" srcset="">  
                         </div>
                     </div>
@@ -485,14 +495,14 @@
             <p class="text-center text-capitalize mt-2">our group of companies</p>
             <div class="conatiner d-flex justify-content-evenly">
                 <div>
-                    <img src="./public/images/prem-vivaah-logo.png" alt="" srcset="">
+                    <img src="./public/images/prem-vivaah-logo.png" alt="" srcset="" class="w-100">
                 </div>
                
                 <div>
-                    <img src="./public/images/le-vech-logo.png" alt="" srcset="">
+                    <img src="./public/images/le-vech-logo.png" alt="" srcset="" class="w-100 ms-2">
                 </div>
                 <div>
-                    <img src="./public/images/new-startups-logo.png" alt="" srcset="">
+                    <img src="./public/images/new-startups-logo.png" alt="" srcset="" class="w-100 ms-2">
                 </div>
             </div>            
         </div>
