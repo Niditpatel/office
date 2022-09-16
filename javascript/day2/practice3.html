@@ -28,14 +28,14 @@
         function check() {
             var num1 = parseInt(document.getElementById("num1").value);
             var num2 = parseInt(document.getElementById("num2").value);
-            if (isNaN(num1) || isNaN(num2)) {
-                alert("please select starting point and ending point first");
-            } else {
-
-            }
             var str = document.getElementById("str").value;
-
-            document.getElementById("result").innerHTML = ` Characters : ${str.substr(num1, num2)}`;
+            if(str.length==0){
+                alert("please enter string first");
+            }
+            if (isNaN(num1) || isNaN(num2)) {
+                alert("please select starting point and ending point ");
+            }
+            document.getElementById("result").innerHTML = ` Sub String : ${str.substr(num1, num2)}`;
         }
     </script>
 </body>
@@ -45,5 +45,6 @@
 <!-- Start
 step1: declare variables num1 and num2 and str
 step2: get the values of variables from user
-step3: display the result of str.substr(num1,num2);
+step3: if string is null then alert enter string and if num1 or num2 are null alert select pointers 
+step4: display the result of str.substr(num1,num2);
 End -->
