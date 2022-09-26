@@ -335,7 +335,7 @@
 
 
     <!-- life style section (nav tabs) -->
-    <div class="container mx-auto">
+    <div class="container mx-auto my-8">
         <ul class="nav nav-tabs flex  flex-wrap list-none border-b-0 pl-0 mb-4" id="tabs-tab" role="tablist">
             <li class="nav-item" role="presentation">
                 <a href="#tabs-home" class="  nav-link block font-medium text-xl leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2
@@ -377,7 +377,7 @@
                     at, porro ea, hic non dicta rem deserunt et.
                 </p>
             </div>
-            <div class="tab-pane fade  active border border-[#808013] p-4" id="tabs-profile" role="tabpanel"
+            <div class="tab-pane fade   border border-[#808013] p-4" id="tabs-profile" role="tabpanel"
                 aria-labelledby="tabs-profile-tab">
                 <p class="text-lg first-letter:text-4xl">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptate, autem distinctio
@@ -391,7 +391,7 @@
                     at, porro ea, hic non dicta rem deserunt et.
                 </p>
             </div>
-            <div class="tab-pane fade  active border border-[#f8a488] p-4" id="tabs-messages" role="tabpanel"
+            <div class="tab-pane fade  border border-[#f8a488] p-4" id="tabs-messages" role="tabpanel"
                 aria-labelledby="tabs-profile-tab">
                 <p class="text-lg first-letter:text-4xl">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Omnis voluptate, autem distinctio
@@ -583,7 +583,106 @@
                 </div>
             </div>
         </div>
+        <div class="w-max mx-auto">
+            <button class="btn capitalize medium-italic  tracking-widest my-4  w-max border-2 py-2 px-4 border-[#e2ebde] 
+            hover:text-white hover:bg-[#d0d0a7] "> view more posts</button> 
+        </div>
+       
     </div>
+
+    <!-- contact us -->
+    <div class="bg-[#e7f2ed] py-8">
+        <div class="container px-4">
+            <p class="capitalize text-5xl medium-italic text-center">contact us</p>
+        <div class="flex flex-cols">
+            <form action="">
+                <div class="form-group mb-4">
+
+                    <input type="text" name="" id="" placeholder="First Name" class="form-contol w-full border border-gray-900 py-1.5 px-3">
+                </div>
+                <div class="form-group mb-4">
+
+                    <input type="text" name="" id="" placeholder="Last Name" class="form-contol w-full border border-gray-900 py-1.5 px-3">
+                </div>
+                <div class="form-group mb-4">
+
+                    <input type="email" name="" id="" placeholder="Email" class="form-contol w-full border border-gray-900 py-1.5 px-3">
+                </div>
+                <div class="max-w-xl">
+                    <label
+                        class="flex justify-center w-full h-32 px-4 transition bg-white border-2 border-gray-300 border-dashed rounded-md appearance-none cursor-pointer hover:border-gray-400 focus:outline-none">
+                        <span class="flex items-center space-x-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="w-6 h-6 text-gray-600" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
+                            </svg>
+                            <span class="font-medium text-gray-600">
+                                Drop files to Attach, or
+                                
+                            </span>
+                            <span class="text-blue-600 p-4 border border-gray-700 uppercase">browse</span>
+                        </span>
+                        <input type="file" name="file_upload" class="hidden">
+                    </label>
+                </div>
+                <label for="comments">Comments</label><br>
+                <textarea name="" id="comments" cols="30" rows="10"></textarea><br>
+                <button class="uppercase p-4">
+                    submit 
+                </button>
+            </form>
+        </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row">
+        <div class="col-md-3">
+        <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingOne">
+                     <h4 class="panel-title">
+                <a data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Collapsible Group Item #1
+                </a>
+              </h4>
+        
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.le VHS.</div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                     <h4 class="panel-title">
+                <a class="collapsed" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Collapsible Group Item #2
+                </a>
+              </h4>
+        
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.</div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                     <h4 class="panel-title">
+                <a class="collapsed" data-bs-toggle="collapse" data-bs-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Collapsible Group Item #3
+                </a>
+              </h4>
+        
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div class="panel-body">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+        </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/tw-elements/dist/js/index.min.js"></script>
