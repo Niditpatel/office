@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="target" style="background-color: black ; color:white;display: inline-block; padding: 0px 10px;">w3resource </div>
+
+
+    <!-- my solution  -->
+    <script>
+        var mystr = "w3resource";
+        let mypop = mystr.split('');
+        var opstr =[] ;
+        for(let i = 0 ;i < mystr.length  ; i++){  
+             let oppop = mypop.pop();
+             opstr.push(oppop);  
+        }
+        let finalop = opstr.join('');
+        console.log(finalop);
+    </script>
+
+    <!-- better solution  -->
+    <script>
+        (function(id){
+            var element = document.getElementById(id);
+            var textnode = element.childNodes[0];
+            var text = textnode.data;
+
+            setInterval(function(){
+                text = text[text.length -1] + text.substring(0,text.length -1);
+                textnode.data = text ; 
+            },250);
+
+        })('target');   
+    </script>
+</body>
+</html>

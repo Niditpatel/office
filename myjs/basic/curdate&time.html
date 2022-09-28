@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+        <p>my output</p>
+        <div id="op-date"></div>
+        <div id="op-time"></div>
+
+
+        <p>better op</p>
+        <div id="cur-day"></div>
+        <div id="cur-time"></div>
+
+
+
+
+        <!-- my solution  -->
+
+    <script>
+        var days = ["sunday","monday","tuesday","wednesday","thursday","friday","saturady"];
+        var mydate = new Date();
+        var myday =days[ mydate.getDay()];
+        var mytime = mydate.toLocaleTimeString().split(':');
+        if(mytime[0]<=12){
+            document.getElementById('op-time').innerHTML =`Current Time is :${mytime[0]}Am:${mytime[1]}:${mytime[2]}`;
+        }
+        else{
+            document.getElementById('op-time').innerHTML =`Current Time is :${mytime[0]}pm:${mytime[1]}:${mytime[2]}`;
+        }
+        document.getElementById('op-date').innerHTML = `Today is : ${myday}`;
+       
+    </script>
+
+
+
+    <!-- better solution  -->
+    <script>
+        setInterval(function(){
+            var daylist =  ["sunday","monday","tuesday","wednesday","thursday","friday","saturady"];
+        var today = new Date();
+        var day = today.getDay();
+        document.getElementById('cur-day').innerHTML = `<strong> Today is </strong> : ${daylist[day]}`;
+        var hour = today.getHours();
+        var minute = today.getMinutes();
+        var second = today.getSeconds();
+        var prepand = (hour >= 12) ? "PM" : "AM" ;
+        hour = (hour >= 12)? hour -12 : hour ;
+        if(prepand === 'PM' && hour === 0){
+            if(minute === 0 && second === 0){
+                prepand = 'Noon';
+                hour =12 ;
+            }else{
+                prepand = 'PM';
+                hour = 12;
+            }
+        }
+        if(hour === 0 && prepand === 'AM'){
+            if(minute === 0 && second === 0){
+                hour = 12;
+                prepand = 'Midnight';
+            }else{
+                hour = 12 ;
+                prepand = 'AM';
+            }
+        }
+        document.getElementById('cur-time').innerHTML = `<strong> Current Time is </strong> : ${hour + prepand} : ${minute} : ${second}`;
+        },1000);
+        
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script
+    src="https://code.jquery.com/jquery-3.6.1.js"
+    integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+    crossorigin="anonymous"></script>
+    <style>
+        .hidden{
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="showpanels">show hidden panels</button><br><br>
+
+    <div class="panel hidden" style="border: 1px solid black;">panel1</div><br>
+    <div class="panel " style="border: 1px solid black;display: none;">panel2</div><br>
+    <div class="panel" style="border: 1px solid black;visibility: hidden;">panel3</div><br>
+    <div class="panel " style="border: 1px solid black;">panel4</div>
+
+
+    <script>
+        $(document).ready(function(){
+
+            $.extend($.expr[':'], {
+               hashiddenpanel : function(pan){
+                if(pan === null)return false;
+                var $pan = $(pan);
+              return  $pan.hasClass('hidden') || $pan.css('display') === 'none' || $pan.css('visibility') === 'hidden' ;
+            }
+
+            });
+            $('#showpanels').click(function(){
+                $('div:hashiddenpanel').removeClass('hidden').css({'display':'','visibility':''});
+            })
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <!-- my solution  -->
+    <script>
+        // var mydate = new Date();
+        var myyear = parseInt("2024");
+        if ((myyear % 4) === 0) {
+            if(myyear % 100 === 0){
+                console.log(`${myyear} is leap year`)
+            }
+        } else {
+            console.log(`${myyear} is not a leap year`);
+        }
+    </script>
+
+
+    <!-- better solution  -->
+    <script>
+        var year = 2024;
+        function leapyear(year){
+            return ((year% 100  === 0)? (year % 400 === 0) : (year % 4 === 0));
+        }
+        var op = (leapyear(year)?(`${year} this is leap year`): (`${year} This is not a leap year`));
+        console.log(op);
+    </script>
+</body>
+
+</html>
