@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.1.js"
+        integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+   
+    <div id="mydata">
+        <div class="myclass">
+            <button id="showpanels">show hidden panels</button><br><br>
+        </div> 
+    </div>
+    <div id="myfinaldata">
+
+    </div>
+
+    <div class="panel hidden" style="border: 1px solid black;">panel1</div><br>
+    <div class="panel " style="border: 1px solid black;display: none;">panel2</div><br>
+    <div class="panel" style="border: 1px solid black;visibility: hidden;">panel3</div><br>
+    <div class="panel " style="border: 1px solid black;">panel4</div>
+
+
+    <script>
+        $(document).ready(function () {
+            var myarr = [
+                { "id": 3534, "name": "Rev. Anjushri Ahuja", "email": "rev_anjushri_ahuja@lakin.info", "gender": "male", "status": "inactive" },
+                { "id": 3533, "name": "Dr. Deeksha Gupta", "email": "gupta_dr_deeksha@runte.io", "gender": "male", "status": "active" },
+                { "id": 3532, "name": "Bhadran Guneta", "email": "bhadran_guneta@leffler-carter.net", "gender": "male", "status": "active" },
+                { "id": 3531, "name": "Keerti Adiga", "email": "keerti_adiga@keeling-hettinger.co", "gender": "male", "status": "inactive" },
+                { "id": 3530, "name": "Amritambu Mehra", "email": "amritambu_mehra@lockman.info", "gender": "female", "status": "active" },
+                { "id": 3529, "name": "Miss Daevika Kaur", "email": "daevika_kaur_miss@thiel-padberg.io", "gender": "female", "status": "inactive" },
+                { "id": 3528, "name": "Gemini Nair", "email": "nair_gemini@hilpert.org", "gender": "female", "status": "active" },
+                { "id": 3527, "name": "Bhudev Pothuvaal", "email": "pothuvaal_bhudev@smitham.info", "gender": "female", "status": "inactive" },
+                { "id": 3526, "name": "Himani Tagore", "email": "himani_tagore@bergnaum.co", "gender": "female", "status": "active" },
+                { "id": 3525, "name": "Miss Bhaswar Panicker", "email": "panicker_miss_bhaswar@thiel.com", "gender": "male", "status": "active" }
+            ]
+
+            $('#mydata').delegate('.myclass > #showpanels','click',myarr,function(){
+                $(myarr).each(function(key,val){
+                    $('#myfinaldata').append(`<p>${val.id}</p><p>${val.name}</p><p>${val.email}</p><p>${val.gender}</p>`)
+                })
+            })
+               
+           
+
+        });
+    </script>
+</body>
+
+</html>
