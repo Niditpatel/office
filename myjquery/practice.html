@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css"
+    />
+
+    <script
+      type="text/javascript"
+      charset="utf8"
+      src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"
+    ></script>
+  </head>
+  <body>
+    <p id="av">helo</p>
+    <p id="new">hii</p>
+    <select name="" id="myselect"></select>
+    <input type="text" name="" id="myhead" />
+    <textarea name="" id="mybody" cols="30" rows="10"></textarea>
+    <button id="subnit">submit</button>
+    <button id="reget">reget</button>
+    <table id="tbl" class="display"></table>
+    <script>
+      var myarr = [];
+
+      // $(Document).ready(function () {
+    //   $('#av').click(function () {
+        $.getJSON('https://gorest.co.in/public/v2/users', function (data) {
+          myarr = data;
+          console.log(data);
+        });
+    //   });
+      $('#new').click(function () {
+        $.each(myarr, function (key, val) {
+          $('#myselect').append(`<option id='${val.id}'>${val.name}</option>`);
+        });
+      });
+      $('#subnit').click(function () {
+        var name = $('#myselect').val();
+        var mytitle = $('#myhead').val();
+        var mybody = $('#mybody').val();
+        var myid = $('#myselect').children(':selected').attr('id');
+
+        var myobject = {
+          user: name,
+          title: mytitle,
+          body: mybody,
+        };
+        // var mydata = JSON.stringify(myobject);
+        // console.log(myobject);
+        // console.log(myid);
+        $.ajax({
+          dataType: 'json',
+          data: myobject,
+          type: 'post',
+          url: `https://gorest.co.in/public/v2/users/${myid}/posts`,
+          headers: {
+            Authorization:
+              'Bearer 32d4273494462c09d55652de6caa24366647c30964502ac36f3fefdbe1573db3',
+          },
+        });
+      });
+      $('#reget').click(function () {
+        $.ajax({
+          dataType: 'json',
+          type: 'get',
+          url: `https://gorest.co.in/public/v2/posts`,
+          success: function (data) {
+            console.log(data);
+            maketable(data);
+          },
+          headers: {
+            Authorization:
+              'Bearer 32d4273494462c09d55652de6caa24366647c30964502ac36f3fefdbe1573db3',
+          },
+        });
+      });
+
+      function maketable(arr) {
+        $('#tbl').DataTable({
+          data: arr,
+          columns: [{ data: 'id' }, { data: 'title' }, { data: 'body' }],
+        });
+      }
+      // });
+    </script>
+  </body>
+</html>

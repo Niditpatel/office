@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <input type="text" name="" id="name" /><br /><br />
+    <select name="" id="myselect">
+      <option>ahemadabad</option>
+      <option>rajkot</option>
+      <option>junagadh</option>
+      <option>jamnagar</option></select
+    ><br /><br />
+    <input type="text" name="" id="indexno" hidden />
+    <input type="radio" name="gender" id="male" value="male" />
+    <label for="">male</label>
+    <input type="radio" name="gender" id="female" value="female" />
+    <label for="">female</label><br /><br />
+    <input type="checkbox" id="vehicle1" name="vehicle" value="Bike" />
+    <label for="vehicle1"> I have a bike</label><br />
+    <input type="checkbox" id="vehicle2" name="vehicle" value="Car" />
+    <label for="vehicle2"> I have a car</label><br />
+    <input type="checkbox" id="vehicle3" name="vehicle" value="Boat" />
+    <label for="vehicle3"> I have a boat</label><br />
+
+    <button id="mysubmit">submit</button>
+    <table>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>name</th>
+          <th>city</th>
+          <th>gender</th>
+          <th>vehicle</th>
+          <th>Del/UPdate</th>
+        </tr>
+      </thead>
+      <tbody id="tbl"></tbody>
+    </table>
+
+    <script>
+      var arr = [];
+
+      function binddata(arr) {
+        var row = ``;
+        $.each(arr, function (key, val) {
+          row += `            <tr>
+                <td> ${key}</td>
+                <td>${val.name}</td>
+                <td>${val.city}</td>
+                <td>${val.gender}</td>
+                <td>${val.vehicles}</td>
+                <td><a  onclick="update(${key})">update</a></td>
+                <td><a onclick="del(${key})">delete</a></td>
+            </tr>`;
+        });
+        $('#tbl').html(row);
+      }
+
+      $('#mysubmit').click(function appemp(e) {
+        event.preventDefault();
+        var name = $('#name').val();
+        var city = $('#myselect').val();
+        var gender = $("input[name='gender']:checked").val();
+        console.log(gender);
+        var vehicles = [];
+        $.each($("input[type='checkbox']:checked"), function () {
+          vehicles.push($(this).val());
+        });
+        //   console.log(vehicles);
+        var uservehicle = vehicles.join(',');
+        //   console.log(uservehicle);
+        var data = {
+          name: name,
+          city: city,
+          gender: gender,
+          vehicles: uservehicle,
+        };
+        var indexn = $('#indexno').val();
+        if (indexn == '' || indexn == 'undefined') {
+          arr.push(data);
+        } else {
+          arr.splice(indexn, 1, data);
+          $('#mysubmit').html('submit');
+        }
+        binddata(arr);
+        cleardata();
+      });
+      function update(i) {
+        var data = arr[i];
+        console.log(data);
+        $('#name').val(data.name);
+        console.log(data.name);
+        $('#myselect').val(data.city);
+        if (data.gender == 'male') {
+          document.getElementById('male').checked = 'true';
+        } else if (data.gender == 'female') {
+          document.getElementById('female').checked = 'true';
+        }
+        var myvhz = data.vehicles.split(',');
+        console.log(data.vehicles);
+        $.each(myvhz, function (key, val) {
+          if (val === 'Bike') {
+            $('#vehicle1').prop('checked', 'true');
+          } else if (val === 'Car') {
+            $('#vehicle2').prop('checked', 'true');
+          } else if (val === 'Boat') {
+            $('#vehicle3').prop('checked', 'true');
+          }
+        });
+        $('#indexno').val(i);
+        $('#mysubmit').html('Update');
+      }
+      function del(i) {
+        event.preventDefault();
+        arr.splice(i, 1);
+        console.log(arr);
+        binddata(arr);
+      }
+      function cleardata() {
+        $('#name').val('');
+        $('#myselect').val(' ');
+        $('input[name="gender"]:checked').prop('checked', false);
+        $('input[type="checkbox"]:checked').prop('checked', false);
+      }
+      //   });
+    </script>
+  </body>
+</html>
